@@ -29,7 +29,7 @@
     <!-- Size should be 32 x 32 pixels -->
     <%#= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%#= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application" %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -58,9 +58,9 @@
                 <%= link_to ('<i class="fa fa-user"></i>' + truncate(current_user.email,length: 25)).html_safe, edit_user_registration_path, title: 'Edit Profile' %></li>
               <li class="col-md-1"></li>
               <li class="col-md-3 logout">
-                <%= link_to('Logout',destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'Logout', method: :delete) %></li>
+                <%= link_to ('Logout', destroy_user_session_path, class: 'btn btn-xs btn-danger', title: 'logout', :method => :delete) %></li>
             <% else %>
-              <li class="col-md-4 float-right">
+              <li class="col-md-4 pull-right">
                 <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %></li>
             <% end %>
           </ul>
